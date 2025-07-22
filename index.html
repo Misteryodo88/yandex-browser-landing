@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Скачать Яндекс Браузер</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #facc15, #dc2626);
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 80px 20px 40px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    p.subtitle {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background-color: white;
+      color: #dc2626;
+      font-size: 1.125rem;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .download-btn:hover {
+      background-color: #fef08a;
+      transform: scale(1.05);
+    }
+
+    .features {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: 1fr;
+      max-width: 1000px;
+      margin: 60px auto;
+    }
+
+    .feature {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 24px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s, opacity 0.6s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .feature.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .feature:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      transform: scale(1.02);
+    }
+
+    .feature h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .cta {
+      margin: 80px 0;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s, transform 0.6s;
+    }
+
+    .cta.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 4rem;
+      }
+
+      .features {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="reveal visible">
+    <h1>Новый Яндекс Браузер</h1>
+    <p class="subtitle">Скачайте быстрый и защищённый браузер с Турбо-режимом, Защитой и Алисой. Более 100 млн пользователей уже с нами!</p>
+    <a class="download-btn" href="https://browser.yandex.ru/download/" target="_blank">Скачать бесплатно</a>
+  </header>
+
+  <section class="features">
+    <div class="feature reveal">
+      <h3>Технология Турбо</h3>
+      <p>Загружает страницы даже при медленном интернете.</p>
+    </div>
+    <div class="feature reveal">
+      <h3>Защита Protect</h3>
+      <p>Блокирует вредоносные сайты и сохраняет ваши данные в безопасности.</p>
+    </div>
+    <div class="feature reveal">
+      <h3>Голосовой помощник Алиса</h3>
+      <p>Отвечает на вопросы, запускает музыку, помогает в повседневных делах.</p>
+    </div>
+  </section>
+
+  <div class="cta reveal">
+    <h2 style="font-size: 2rem; font-weight: 700;">Готовы попробовать?</h2>
+    <p style="font-size: 1.125rem; margin-bottom: 20px;">Скачайте Яндекс Браузер прямо сейчас — это бесплатно.</p>
+    <a class="download-btn" href="https://browser.yandex.ru/download/" target="_blank">Скачать браузер</a>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
